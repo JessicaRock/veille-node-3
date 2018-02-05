@@ -1,3 +1,4 @@
+"use strict";
 var http = require('http');
 http.createServer(function(request, response){
 
@@ -6,7 +7,6 @@ response.writeHead(200, {"Content-Type" : "text/html; charset=UTF-8"})
 response.write('<style>h1 {font-family:arial; font-size: 3em;}</style>')
 response.write('<h1> ça marche et vive le Québec</h1>')
 
-"use strict";
 const fs = require("fs");
 let oDonnees = {}
 let oProvinces = {}
@@ -21,18 +21,6 @@ fs.readFile('provinces.json', (err, data) => {
   oProvinces = JSON.parse(oDonnees)
   genererHtml()
 });
-
-//let oProvinces = fs.readFileSync('provinces.json');
-
-let o = {   
- "QC" : "Québec",
- "ON" : "Ontario",
- "MA" : "Manitoba",
- "SK" : "Saskashewan",
- "AL" : "Alberta",
- "NF" : "Terre-Neuve",
- "NB" : "Nouveau-Brunswick"
-}
 
 let trace = ''
 
@@ -56,10 +44,6 @@ const genererHtml = ()=>{
 	response.write(sTab)
 
 }
-
-
-
-//genererHtml(o)
 
 
 }).listen(3000)
