@@ -5,7 +5,7 @@ http.createServer(function(request, response){
 response.writeHead(200, {"Content-Type" : "text/html; charset=UTF-8"})
 
 response.write('<style>h1 {font-family:arial; font-size: 3em;}</style>')
-response.write('<h1> ça marche et vive le Québec</h1>')
+response.write('<h1>Ça marche et vive le Québec</h1>')
 
 const fs = require("fs");
 let oDonnees = {}
@@ -25,7 +25,6 @@ fs.readFile('provinces.json', (err, data) => {
 let trace = ''
 
 const contenu_objet_json = (o)=>{
-  trace = '<h2>Test</h2>'
    trace += '<table id="exercice">';
    for (let p in o) { 
      trace += '<tr><td>' + p + '</td><td>' + o[p] + '</td></tr>';
